@@ -11,7 +11,12 @@ function App() {
   return (
     <div>
       <Navbar isloggedProps= {isloggedProps}/>
-      <h1>Hi This is my first react app!!</h1>
+      <h1
+        style={{
+          color:"red",
+          backgroundColor:'beige'
+        }}
+      >Hi This is my first react app!!</h1>
       {showDesc ? <p1>{getRandomNumber()}</p1> : <p1>No Description</p1>}
     </div>
   );
