@@ -1,5 +1,5 @@
 import './navbar.css';
-
+import { useState } from 'react';
 function NavItem({onNavItemClick, children}){
   
   return (
@@ -12,7 +12,9 @@ function NavItem({onNavItemClick, children}){
 function Navbar(props) {
     // or do Navbar({isloggedProps}) de-constucting the data variable
     // console.log(props);
+    const [content, setContent] = useState("This is the content");
     function handleClick(text){
+      setContent(text);
     console.log("HELLO WORLD"+text);
     // console.log(props.children);
   }
@@ -27,7 +29,7 @@ function Navbar(props) {
         {/* <NavItem text="About"/>
         <NavItem text="Contact"/> */}
       </ul>
-    
+      <h1>{content}</h1>
     </div>
   );
 }
