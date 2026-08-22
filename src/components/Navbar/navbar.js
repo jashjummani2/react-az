@@ -1,9 +1,9 @@
 import './navbar.css';
 
-function NavItem({text}){
+function NavItem(props){
   return (
     <li className="nav-item">
-      <div className="nav-item-link">{text}</div>
+      <div className="nav-item-link">{props.children}</div>
     </li>
   );
 }
@@ -16,9 +16,9 @@ function Navbar(props) {
   
       <p>{props.isloggedProps ? "Logged In" : "Logged Out"}</p>
       <ul className="navbar">
-        <NavItem text="Home"/>
-        <NavItem text="About"/>
-        <NavItem text="Contact"/>
+        <NavItem>About</NavItem>
+        {/* <NavItem text="About"/>
+        <NavItem text="Contact"/> */}
       </ul>
     
     </div>
