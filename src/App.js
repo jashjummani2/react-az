@@ -1,6 +1,7 @@
 // import logo from './logo.svg';
 // import './App.css';
-import Navbar from "./components/navbar";
+import Navbar from "./components/Navbar/navbar";
+import Button from "./components/button/button";
 const getRandomNumber = ()=>{
   return Math.floor(Math.random()*100);
 }
@@ -11,6 +12,7 @@ function App() {
   return (
     <div>
       <Navbar isloggedProps= {isloggedProps}/>
+      <Button/>
       <h1
         style={{
           color:"red",
