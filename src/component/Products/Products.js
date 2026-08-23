@@ -1,16 +1,30 @@
-import productsData from "../../data/products.json"
+import React from "react";
 import "./Products.css";
 
-function Products(){
-    
-    return <div className="products-container">
-        {/* key has to given to the child in map */}
-        {productsData.map(product=> <div key={product.id} className="product">
-            <div className="product-name">{product.name}</div>
-            <img src={require(`../../assets/${product.image}`)} alt={product.name} />
-            <button className="yellow-button">Add to Cart</button>
-        </div>)}
-
+export function Product({ id, name, image, onAddToCart }) {
+  return (
+    <div key={id} className="product">
+      <img src={require(`../../assets/${image}`)} alt={name} />
+      <div className="product-name">{name}</div>
+      {/* <button onClick={() => onAddToCart(id, name, image)}>Add to cart</button> */}
     </div>
+  );
 }
+
+function Products({ products, onAddToCart }) {
+  return (
+    <div className="products-container">
+      {products.map((product) => (
+        <Product
+          key={product.id}
+          id={product.id}
+          name={product.name}
+          image={product.image}
+        //   onAddToCart={onAddToCart}
+        />
+      ))}
+    </div>
+  );
+}
+
 export default Products;
