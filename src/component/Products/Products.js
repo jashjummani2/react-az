@@ -6,7 +6,7 @@ export function Product({ id, name, image, onAddToCart }) {
     <div key={id} className="product">
       <img src={require(`../../assets/${image}`)} alt={name} />
       <div className="product-name">{name}</div>
-      {/* <button onClick={() => onAddToCart(id, name, image)}>Add to cart</button> */}
+      <button className="yellow-button" onClick={() => onAddToCart(id, name, image)}>Add to cart</button>
     </div>
   );
 }
@@ -20,7 +20,7 @@ function Products({ products, onAddToCart }) {
           id={product.id}
           name={product.name}
           image={product.image}
-        //   onAddToCart={onAddToCart}
+          onAddToCart={onAddToCart}
         />
       ))}
     </div>

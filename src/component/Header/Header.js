@@ -1,14 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Header.css";
-import Modal from "../UI/Modal"
-function Header(){
-    const [showCart,setShowCart] = useState(false);
-    const openCart = () => {
-        setShowCart(true);
-    }
-    const closeCart = () =>{
-        setShowCart(false)
-    }
+function Header({openCart}){
+    
     return(
         <div className="header">
             <h1>My React Store</h1>
@@ -17,9 +10,7 @@ function Header(){
                     Cart
                 </button>
             </div>
-            <Modal show={showCart} onClose={closeCart}>
-                Hello from Cart
-            </Modal>
+            {/* <Cart /> */}
             
             {/* {showCart && <div className="backdrop" onClick={closeCart}>
                 <div className="modal">
